@@ -1,2 +1,4 @@
 # Ing. della Conoscenza
- Materiale didattico
+## Materiale didattico
+
++ [Introduzione](IC-intro.pdf)
