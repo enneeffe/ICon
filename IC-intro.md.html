@@ -1,0 +1,1019 @@
+<meta charset="utf-8" lang="it">
+<link rel="stylesheet" href="ic.css">
+
+__Ingegneria della Conoscenza: Introduzione__
+  [Nicola Fanizzi](http://www.di.uniba.it/~fanizzi)  
+    **Ingegneria della Conoscenza** 
+    CdL in [Informatica](http://www.uniba.it/ricerca/dipartimenti/informatica/didattica/corsi-di-laurea/informatica-270/laurea-triennale-in-informatica-d.m.-270-1) &bull; _[Dipartimento di Informatica](http://www.di.uniba.it)_ 
+    [Università degli studi di Bari](http://www.uniba.it) Aldo Moro
+
+	![](figs/Intro.png)
+
+
+# Introduzione
+
+## Definizioni Preliminari
+
+
+
+<!-- Computational intelligence is the study of the design of intelligent agents. An
+agent is something that acts in an environment—it does something. Agents include
+worms, dogs, thermostats, airplanes, humans, organizations, and society. An 
+intelligent agent is a system that acts intelligently: What it does is appropriate for its
+circumstances and its goal, it is flexible to changing environments and changing goals,
+it learns from experience, and it makes appropriate choices given perceptual limitations
+and finite computation.
+ -->
+
+_Contesto_ 
+
+Intelligenza Artificiale (AI)
+: disciplina tesa a studiare e comprendere i principi che rendono possibile un comportamento intelligente in sistemi artificiali 
+
+	* Ipotesi: <div align="center">_ragionamento_ $\approx$ _computazione_</div>
+
+		- collegata alla (ipo)tesi di _Church-Turing_
+			- c'è un _livello di astrazione_ nel quale si può interpretare il ragionamento come manipolazione di simboli 
+			- tale livello può spiegare le azioni di un sistema in termini dei suoi input
+
+	* Intelligenza artificiale (o computazionale): si propone di fornire metodi per la progettazione di _artefatti SW intelligenti_, utili a scopi precisi
+
+
+L'_intelligenza_ dei sistemi coinvolti non è necessariamente quella umana:
+* si consideri la classe delle _organizzazioni_: individui in sé anche non particolarmente intelligenti ma la comunità può esibire un comportamento intelligente
+	- prototipo: _ant colony_, ma anche gli sciami (_swarm_)
+		+ ricerca del cibo, adattamento ai cambiamenti
+	+ le aziende lavorano su prodotti per i quali la somma delle competenze richieste è molto maggiore di quella di ogni singolo addetto
+
+## Scienza e Ingegneria
+
+> "È possibile creare macchine in grado di  volare?"
+analoga a
+> "È possibile creare macchine in grado di pensare?"
+
+Analogia, che spiega la tensione tra<br> la visione _scientifica_ e quella _tecnologica_: 
++ AI come _scienza_ che mira a comprendere<br> i principi del ragionamento 
+	* secondo il metodo scientifico,<br> si dovrebbero creare e verificare teorie (confutabili) 
+		* teorie sulla soluzione algoritmica di problemi d'interesse supportate empiricamente attraverso le implementazioni 
+
+> "Knowledge engineering (KE) refers to all technical, 
+> scientific and social aspects involved in building, 
+> maintaining and using _knowledge-based systems_."
+
+
++ AI come disciplina _ingegneristica_, tesa a costruire tecnologie/sistemi che risolvano specifici problemi
+	+ creare e testare _sistemi_ SW intelligenti _basati su conoscenza_ (KBS) 
+		* la cui qualità può essere valutata attraverso gli standard dell'informatica
+
+La verifica sperimentale delle teorie è essenziale
+
+* _Rasoio di Occam_: preferire sempre teorie e implementazioni più semplici 
+
+
+
+
+## La Piramide del Sapere
+
+Piramide del Sapere[^dikw]
+: (detta anche _gerarchia della conoscenza_ o _DIKW_) classe di modelli atti a rappresentare relazioni  strutturali e/o funzionali sottese tra _dati_, _informazioni_, _conoscenza_ e _sapere_
+
+> "Typically information is defined in terms of data, knowledge in terms of information, and wisdom in terms of knowledge"
+
+<div class="inverse">
+
+****************************************************
+*           +
+*          / \
+*         / W \ ---------- Sapere/Wisdom
+*        +-----+        
+*       /   K   \ -------- Conoscenza/Knowledge
+*      +---------+ 
+*     /     I     \ ------ Informazione/Information
+*    +-------------+
+*   /       D       \ ---- Dati/Data
+*  +-----------------+
+****************************************************
+
+</div>
+
+
+	* modello rappresentato anche come _concatenazione_, come un _framework_, con una serie di _grafi_ e come un _continuum_ 
+
+[^dikw]: su [wikipedia](https://en.wikipedia.org/wiki/DIKW_pyramid)
+
+
+### Dato
+
+_simboli_ o _segni_, che rappresentano stimoli o segnali e che rimangono inutili fino a quando non sono messi in una qualche forma: 
+	+ _universali_, prodotti dall'osservazione<br> o 
+	+ _soggettivi_, le osservazioni stesse
+
+_fatti_
+: osservazioni discrete, oggettive, non organizzate o elaborate che difettano di un contesto interpretativo; sono _veri_, _oggettivi_, o _almeno verificabili_
+_segnali_
+: nel dominio soggettivo, sono _stimoli sensoriali_, o letture di _segnali_ (attraverso sensi/sensori)
+_simboli_
+: insiemi di segni che rappresentano le _percezioni_ di proprietà di oggetti, eventi, dell'ambiente: simboli _registrati_ (catturati, immagazzinati) necessari alla comunicazione 
+
+
+### Informazione
+
+L'__informazione__ può essere definita come dati che sono dotati di _significato_/_scopo_:
+	+ a differenza dei dati, si ottiene _per descrizione_ e<br> si differenzia per la sua _utilità_
+	+ viene _inferita_ dai dati 
+		+ rispondendo a specifiche domande (e.g. le 5 _W_) 
+		+ rendendoli quindi utili a prendere _decisioni_ (o intraprendere _azioni_)  
+
+
+Distinzioni:
+
+strutturale vs. funzionale
+: informazione come: 
+	+ dati organizzati per conferire loro rilevanza per determinati scopi o contesti risultando quindi significativi e utili
+	+ formulazione alternativa come "dati che ci cambiano"
+
+simbolica vs. soggettiva
+: informazione come: 
+
+	+ _universale_, come simboli o segni; 
+	+ _soggettiva_, significato al quale vengono collegati i simboli; 
+	+ entrambe
+
+***
+
+__Esempi__
+
++ informazione che rappresenta uno stato di _consapevolezza_,<br> fenomeno che rappresenta sia un processo che un prodotto; 
++ informazione correlata al _significato_ e all'_intenzione_
+	* contenuto dei DB, del web, ecc. 
+	* o significato di enunciati nelle intenzioni del parlante / dello scrivente compreso / travisato dall'ascoltatore / lettore 
+
+
+### Conoscenza 
+
+__Conoscenza__ come informazione elaborata, organizzata, o altrimenti applicata, messa in atto
+
+* _commistione_ di esperienza sistematizzata, valori, informazione contestuale, comprensione profonda e intuizione ben fondata 
+* fornisce un _ambiente_ e una _struttura_ per la valutazione e l'acquisizione di nuove esperienze e informazioni
+	- nei singoli _agenti_, origina e viene applicata a livello _mentale_
+	- nelle _organizzazioni_ spesso incorporata non solo attraverso documenti anche in senso esteso, e loro sistemi di memorizzazione, ma anche nelle procedure (routine) organizzative, processi, pratiche e norme
+
+
+Conoscenza _elaborata_
+: definizioni alternative:
+    + sintesi di più sorgenti di informazioni nel tempo
+    + organizzazione + elaborazione portano alla comprensione, all'esperienza e all'apprendimento
+    + commistione di informazione di contesto, valori, esperienza e regole
+    + informazione connessa attraverso relazioni
+
+
+Conoscenza _procedurale_
+: definita come:
+	+ "know-how" e anche "know-who" e "know-when",<br> raggiunti tramite un'esperienza pratica
+		+ azione e non la descrizione di un'azione
+	+ applicazione di dati e informazioni
+	+ esperienza, qualità, expertise, capacità
+
+
+Conoscenza _proposizionale_
+: descritta come strutturazione delle credenze e internalizzazione: 
+	+ in termini proposizionali, come credenze giustificabili (e loro segni) 
+		+ può diventare a sua volta informazione
+	+ soggettivamente:
+		* pensiero caratterizzato dalla credenza che essa sia vera
+		* empirica ma anche non-empirica, 
+			* logica, matematica, filosofica, ...
+
+
+<div class="inverse">
+
+***************************************************************
+*                       t--+ +--e                             *
+*         ||               v v                                *
+*  .-. .--||--->.-.        .-.         .-.      |     .-.     * 
+* | D +---||-->+ I +----->| K +------>| U +-----+--->| W |    *
+*  '-' '--||--->'-'        '-'         '-'      |     '-'     *
+*         ||                                    |             *
+*           descrizione istruzione spiegazione  |             *
+*              cosa?       come?     perché?    |             *
+*         <-------------------------------------|-----------> *
+*                        PASSATO                |   FUTURO    *
+*                                                             *
+* t,e : conoscenza tacita ed esplicita                        *
+***************************************************************
+
+</div>
+
+
+# Rappresentazione e Ragionamento 
+Per esperienza: le prestazioni su compiti che sembrano coinvolgere _forme di intelligenza_ richiedono un certo quantitativo di _conoscenza_: 
+	* Informalmente, informazioni su un dato dominio o soggetto o anche come svolgere date azioni
+	* Scopo: formalizzare e raffinare la nozione di conoscenza derivante dal senso comune ai fini dello sviluppo di un _framework teorico-pratico_ per la sua rappresentazione e uso 
+
+
+
+
+_Compiti_
+
++ Gli agenti umani hanno bisogno di molta conoscenza per svolgere compiti anche molto semplici 
++ Le macchine sono in genere più indicate per compiti che non richiedano molta conoscenza (es. op. matematiche) 
+	* diventano sempre più brave in compiti _knowledge-intensive_, come il riconoscimento delle facce, le diagnosi mediche, la piena comprensione del linguaggio o le argomentazioni di tipo legale
++ S'intende investigare la costruzione di sistemi SW dotati di conoscenza riguardo il mondo 
+	+ capaci di acquisirla e usarla per risolvere i problemi sottoposti
+
+_Problematiche_:
++ come acquisire e rappresentare la conoscenza su un dominio
++ come usarla per rispondere a domande e/o risolvere problemi
+
+
+_Logica_ uso: 
+
++ Specifica precisa del _significato_ 
+	+ più importante della particolare sintassi 
++ _Notazione_: e.g. sintassi Datalog/Prolog
+	* semplice
+	* con un risvolto operazionale (es. [#GNU-Prolog])
+
+
+
+
+
+
+## Rappresentazione della Conoscenza
+Problema (compito) e soluzione spesso disponibili in modo informale 
+
+*************************************************************
+*         .--------.    risolvere    .---------.       
+*        | Problema +-------------->| Soluzione |
+*         '---+----'                 '---------' 
+*rappresentare|                           ^        informale
+*- - - - - - -|- - - - - - - - - - - - - -|- - - - - - - - - 
+*             v               interpretare|        formale
+*    .----------------.                .--+---.       
+*   | Rappresentazione +------------->| Output |
+*    '----------------'   calcolare    '------' 
+*************************************************************
+
+Soluzione attraverso le macchine: necessità di formalizzazione:
++ delineare il _problema_ e determinare cosa costituisca una _soluzione_
++ _rappresentarlo_ in un linguaggio su cui la macchina possa ragionare
++ far _calcolare_ alla macchina un _output_, come risposta all'utente (o come sequenza di azioni messe in atto sull'ambiente) 
++ _interpretare_ l'output come _soluzione_ al problema
+
+
+### Conoscenza
+
+Conoscenza
+: Informazione sul dominio da usarsi per risolvere problemi nel dato dominio:
+	+ Uno _schema di rappresentazione_ per le macchine va formalizzato: _base di conoscenza_ (KB)
+		* rappresentazione interna al sistema 
+
+Obiettivi:
++ _ricchezza espressiva_ sufficiente alla risoluzione del problema
++ _vicinanza_ ai termini del problema: 
+	+ compatta, naturale, manutenibile
+	+ facilita l'individuazione della relazione dominio e sua rappresentazione per determinarne la correttezza
+		+ piccole modifiche al problema --> piccole modifiche alla rappresentazione
++ atta ad essere _elaborata_ in modo _efficiente_ 
+	+ capacità di esprimere caratteristiche del problema sfruttabili per risparmiare risorse 
+		+ eventualmente con compromessi con l'accuratezza
++ _acquisibile_ da utenti, dati e/o esperienza pregressa
+
+
+Schemi di rappresentazione: possono partire da alcuni degli obiettivi e man mano essere estesi
+
++ ad es., da quelli per l'apprendimento si possono espandere per ammettere maggiori capacità risolutive o di inferenza
++ alcuni puntano sull'espressività per poi aggiungere inferenza e capacità di apprendimento
++ alcuni partono dalla trattabilità dell'inferenza per essere rese più tardi più naturali e facilmente acquisibili
+
+
+Domande-guida:
++ Cosa costituisce una soluzione del problema? <br>Quanto dev'essere buona una soluzione?
++ Come rappresentare il problema? <br> Quali distinzioni vanno fatte per risolverlo? <br>Quale conoscenza specifica del mondo è necessaria? <br>Come acquisire tale conoscenza da esperti o dall'esperienza? <br>Come verificarla, manutenerla e migliorarla?
++ Come si calcola un output interpretabile come soluzione al problema? <br>Cosa va minimizzato in termini di prestazioni (caso medio/pessimo)? <br>È essenziale che un utente possa capire la risposta fornita?
+
+
+### Soluzioni
+Come nell'ing. del SW anche qui il progettista deve definire cosa costituisca una __soluzione__:
++ Spesso come _raffinamento della specifica_ del problema
+	+ problemi poco specificati ma lacune che non possono essere colmate arbitrariamente 
++ Automatizzare forme di _senso comune_ può fornire le motivazioni per diversi problemi da risolvere: 
+	+ conclusioni dettate dal senso comune riguardanti _assunzioni non dichiarate_
++ Dato un problema ben definito, nel passo successivo occorre stabilire se conti il fatto che la risposta fornita sia errata o incompleta
++ A volte non serve una generica soluzione ma la migliore secondo un dato criterio
+ 
+_Classi di soluzioni_ comuni:
+
+Soluzione Ottimale 
+: migliore secondo una _misura di qualità_:
+	* tipicamente _ordinale_ 
+	* anche _cardinale_, lì dove contano anche grandezze relative in situazioni come la combinazione di criteri multipli o nel ragionamento sotto incertezza,   
+		- Ad es. l'_utilità_
+
+Soluzione Soddisfacente 
+: soluzione buona secondo una descrizione di quelle adeguate: 
+	+ quando non serve la soluzione migliore (perché costosa)
+
+Soluzione Approssimativamente Ottimale 
+: di qualità _prossima_ alla migliore ottenibile teoricamente: 
+	+ data una misura cardinale che ammetta approssimazioni
+	+ conveniente per ragioni di efficienza a seconda degli algo.
+
+Soluzione Probabile
+: quella che _verosimilmente_ può essere una soluzione, con un certo _grado_ di certezza:
+	+ forma di approssimazione precisa di soluzione soddisfacente
+	+ a volte si distingue il tasso di errore per _falsi-positivi_ (proporzione di risposte fornite non corrette) da quello di _falsi-negativi_ (proporzione di risposte corrette non fornite)
+		+ categorie non esclusive
+
+
+### Rappresentazioni del Problema
+
+
+Sistemi simbolici (computer, menti umane, ecc.)
+
+Simbolo
+: pattern significativo manipolabile come singola unità
+
+	+ ad es. parole scritte, frasi, gesti, segni su carta o sequenze di bit
+
+Un _sistema di simboli_ serve a creare, copiare, modificare e distruggere simboli
+
+> "A physical symbol system has the necessary and sufficient means 
+> for general intelligent action" -- Newell & Simon[^NS76] 
+
+Ipotesi (empirica) forte:
++ ogni sistema intelligente è necessariamente un sistema simbolico fisico ed esso rappresenta  tutto quello che serve perché un'azione possa dirsi intelligente
++ non implica invece che serva un corpo per percepire e agire sul mondo
+
+Un sistema intelligente manipola simboli per produrre azioni:
++ simboli che si riferiscono ai vari oggetti del mondo
++ ma altri simboli potrebbero rimandare a concetti utili che possono avere un significato per l'esterno o meno
+	+ stati interni del sistema 
+
+
+[^NS76]: Newell, A. and Simon, H.A. (1976). _Computer science as empirical enquiry: Symbols and search_. Communications of the ACM, 19: 113–126. 
+
+
+
+Un sistema di simboli serve a _modellare_ il mondo 
+
+modello del mondo
+: rappresentazione delle specifica di quanto risulti vero nel mondo o della sua dinamica:
+	+ non serve un modello troppo dettagliato perché risulti utile 
+	+ i modelli sono _astrazioni_
+		+ rappresentano solo parte del mondo (eliminati i dettagli)
+	+ _livello_ di astrazione (diversa precisione nel dettaglio) 
+		+ fornisce un _ordine parziale_ d'astrazione 
+			+ più basso il livello maggiori i dettagli 
+	+ un sistema può ammettere _più modelli_, anche in _contraddizione_ fra loro
+		+ si giudicano in base all'_utilità_ più che sulla correttezza
+
+***
+
+__Esempio__ -- robot con un modello della pianta d'un edificio
+ignorando le distanze, la sua grandezza gli angoli di sterzata ecc.
+
+***
+
++ potrebbe prendere in considerazione tali caratteristiche in una rappresentazione di basso livello 
+
+
+Fattori nella scelta del _livello d'astrazione_: 
++ descrizioni _high-level_ più semplici per gli umani
+	+ specifica + comprensione
++ descrizioni _low-level_ più accurate e predittive
+	+ dettagli essenziali per la soluzione del problema
++ più basso il livello, più è difficile il ragionamento
+	+ comporta più passi e più piani d'azione da scegliere
+	+ le info di basso livello da prendere in considerazione potrebbero essere sconosciute 
+
+Modello a più livelli d'astrazione:
++ ad es. sistemi biologici / informatici 
+	+ livello neurale
+		+ livello biochimico
+			+ livello chimico
+				+ livello fisico
++ anche la Scienza stessa è strutturata a livelli gerarchici 
+
+Livelli comuni tra sistemi biologici e di calcolo:
++ _livello della conoscenza_ livello d'astrazione che considera quanto il sistema sa e crede e ritiene siano i suoi fini (riguardano il mondo esterno)
+	+ quello che sa ma non come ragiona 
+	+ non si specifica come calcolare la soluzione o quale strategia adottare 
++ _livello simbolico_ descrizione in termini di come ragiona  il sistema (internamente sul mondo esterno)
+	+ per implementare il livello precedente si manipolano simboli per produrre risposte 
+	+ attestato da esperimenti dei cognitivisti 
+
+
+
+
+### Ragionamento
+
+La manipolazione di simboli produce risposte/azioni attraverso il __ragionamento__
+
++ Rappresentazioni AI diverse dai programmi nei ling. tradizionali perché specificano _COSA_ dev'essere calcolato e non _COME_ vada fatto
+	+ ad es. specificare di voler comprendere e comunicare lo stato di salute, il disturbo, la malattia più probabile per un dato paziente  
++ Il ragionamento si traduce spesso in una _ricerca_ in uno spazio di possibilità 
++ Decisioni basate su 3 aspetti: 
+	1. calcolo in fase di progettazione del sistema  
+		+ svolto dal suo progettista 	
+	2. computazione da farsi prima dell'osservazione del mondo (e conseguente risposta)
+		+ svolto dal sistema prima di agire 
+		+ può comportare una fase di compilazione e di apprendimento: 
+			+ offline, si considerano conoscenza di fondo (BK) e dati, che sono compilati in forma usabile: base di conoscenza 
+			+ utile sia in fase di progettazione sia offline 
+	3. computazione in fase di risposta/azione
+		+ svolta durante l'osservazione dell'ambiente (e la conseguente azione/risposta)
+		+ le osservazioni (ottenute online) sono usate assieme alla base di conoscenza per determinare il da farsi
+
+
+Vanno distinte la conoscenza nella mente del progettista da quella nella mente del sistema intelligente; casi limite:
++ agente altamente specializzato<br> lavora bene nel suo ambiente ma è inutilizzabile al di fuori
+	+ es. termostato
++ agente molto flessibile al variare di ambienti e compiti (a run-time)
+	+ es. insetti 
+	+ molto più difficili da progettare
+
+
+_Strategie di costruzione_:
+- semplificare gli ambienti e costruire sistemi di ragionamento complessi per tali ambienti 
+	+ es. robot in fabbrica 
+	+ si possono dimostrare proprietà dei sistemi o ottimizzarli per particolari situazioni
+	+ serve un modello del sistema e del suo ambiente
+	+ un osservatore/progettista deve poter ragionare su tale modello
+		+ ad es. il progettista può dimostrare se il sistema raggiungerà uno scopo, se eviterà di imbattersi in situazioni pericolose, se potrà restare immobilizzato da qualche parte (_liveness_), o se poterà a termine tutti i suoi compiti (_fairness_)
+- agenti semplici per ambienti complessi/naturali
+	+ ad es. ispirandosi agli insetti 
+	+ aggiungere più capacità di ragionamento al crescere della complessità dei compiti
+	+ vantaggio: similarità con gli ambienti umani 
+
+
+
+## Sistemi RR
+
+Un __sistema per la rappresentazione e il ragionamento__ (RRS) è composto da:
++ un _linguaggio_ per comunicare con la macchina 
++ un modo per assegnare un _significato_ al linguaggio
++ _procedure_ per fornire per via automatica _risposte_ a specifici input al sistema espresse in tale linguaggio 
+
+
+### Linguaggio
+
+Livelli:
+
++ Linguaggio _di programmazione_ di non alto-livello (Fortran, C/C++) il significato di frasi è puramente definito in termini dei passi da svolgere per eseguire un programma
+	* computazione determinata dall'input e dal programma  
+	* difficile mappare un enunciato informale di un problema su una sua rappresentazione per i RRS
+
++ Linguaggio _naturale_ (Italiano, Inglese) per le frasi che descrivono il problema
+	* facile mapping sulla rappresentazione del problema 
+	* computazione da eseguire sulla macchina alquanto difficile da determinare
+
++ _Compromesso_
+	* non grande distanza tra specifica naturale  del problema e sua rappresentazione
+	* si richiede che il calcolo richiesto da un determinato input sia determinabile efficacemente
+
+
+_Fattori_ da considerare nella scelta del linguaggio:
++ specifica dei problemi 
++ significato da associare
++ computazione appropriata all'input
+
+
+### Esempio | DB come RSS
+
+In un database:
++ si possono specificare alla macchina fatti circa un dato dominio
++ per poi porre interrogazioni per ritrovarli
++ semantica: consente di decidere sulla _verità_ di date informazioni in una _base di conoscenza_
+	* le informazioni passano dal livello dei dati a quello della conoscenza 
+Si prenderanno in considerazione RRS forme di rappresentazione più flessibili e procedure di risposta alle domande più sofisticate:
+	+ tipicamente basate su ricerca su tabelle (indicizzate)
+	+ non si può chiedere cos'altro sia verso, o verosimile per il dato dominio
+
+
+### Ontologie e Concettualizzazioni
+
+Prerequisito fondamentale per l'uso di RRS:<br> _rappresentazione del dominio_ del problema da risolvere / compito da svolgere
+
++ di che _tipi di cose_ consista il dominio
++ da quali _legami_ siano correlate
+
+Nessuna teoria generale ma ricette specifiche per i vari domini, tuttavia:
+
++ Descrizione del mondo in termini di individui (le cose) e relazioni tra di essi --> __ontologia__
+
++ _Nozione di relazione_ intesa che include proposizioni vere o false indipendentemente dai singoli individui
+	* proprietà dei singoli individui <br>o relazioni tra due (o più) di essi
+	+ qualunque _cosa nominabile_, sia concreta sia astratta, può essere considerata come individuo
+		- ad es., persone, colori, emozioni, numeri, e istanti temporali  
+	+ Cosa sia una "cosa" dipende dall'osservatore <br>tanto quanto risulta una proprietà del mondo
+		+ osservatori diversi, o anche uno stesso osservatore ma con diversi fini, può definire il mondo in modi diversi
+
++ Per ogni compito/dominio, vanno identificati individui e relazioni specifici per esprimere quello che è vero nel modo in esame
+	* da ciò dipende l'abilità nel risolvere i problemi nel dominio
+	* si assume che l'_ingegnere della conoscenza_ che modella il dominio decida la sua ontologia
+		- sistema SW capace di decidere l'ontologia raggiungerebbe un'intelligenza a livello di quella umana
+			+ target ancora difficile per il machine learning
+
+
+
+# Dimensioni della Complessità
+
+__Complessità__ degli agenti/dei sistemi variabile:
++ dai termostati alle aziende (con finalità diverse e immerse in ambienti competitivi) 
+ 
+
+__Dimensioni__ della complessità nella progettazione: 
++ da combinare anche se studiate separatamente
++ definiscono uno _spazio di progettazione_ di sistemi intelligenti
+	+ diversi sistemi a seconda dei loro valori 
++ forniscono una _suddivisione sommaria_ dello spazio di progettazione 
+	+ ma vanno aggiunte altre scelte 
+
+
+
+## Modularità 
+
+__Modularità__ dimensione entro la quale un sistema può essere decomposto in _moduli_ interagenti considerabili separatamente: 
+
+- serve a _dominare la complessità_
+	+ evidente nei sistemi di interesse per l'informatica ma in ogni campo in cui si trattino organizzazioni
+- tipicamente espressa come decomposizione gerarchica
+	+ se i moduli sono organizzati in moduli più piccoli a loro volta organizzati gerarchicamente fino al livello delle op. primitive 
+	+ l'astrazione procedurale e l'OOP servono a sfruttare modularità e astrazione
+
+Strutture possibili: 
++ _piatta_: nessuna struttura organizzativa;
++ _modulare_: sistema decomposto in moduli che interagiscono considerabili separatamente; 
++ _gerarchica_: sistema modulare, dove i moduli possono essere decomposti in sotto-moduli interagenti, a loro volta decomponibili gerarchicamente 
+ 
+_Ragionamento_:
++ struttura piatta / modulare: _singolo_ livello di astrazione 
++ struttura gerarchia: _più_ livelli d'astrazione 
+	+ più basso il livello nella gerarchia più basso il livello di astrazione 
+
+***
+
+__Esempio__ -- organizzazione di una vacanza
+
+***
+
+All'inizio si può ignorare l'aspetto gerarchico per concentrasi anche sulle altre dimensioni della complessità
+
++ utile per problemi dalle modeste dimensioni
+
+Si passa alla struttura gerarchica quando i problemi / i sistemi diventano più complessi
+
+
+## Schema di Rappresentazione
+
+Schema di Rappresentazione
+: riguarda la _descrizione del mondo_
+
+	* stati differenti del mondo hanno un impatto sul comportamento del sistema 
+	* fattorizzabile in stato _interno_ (stato delle credenze) e stato _dell'ambiente_
+	* a livello di massima semplicità un sistema ragiona esplicitamente in termini di stati identificati individualmente 
+
+*** 
+
+__Esempio__ -- termostato (6 stati): 
++ stati _interni_: `spento`/`riscaldamento`
++ stati _ambiente_: `freddo`, `comfortevole`, `caldo`  
+	+ ambiente freddo --> deve passare o restare in modalità `riscaldamento` 
+	+ ambiente molto `caldo` --> può passare nello stato `spento` 
+	+ ambiente è `confortevole` --> dovrebbe rimanere nello stato (interno) corrente
++ _azioni_: riscalda nello stato riscaldamento altrimenti è spento
+
+***
+
+
+Conviene ragionare in termini di _caratteristiche_ degli stati o _proposizioni_ booleane anziché enumerarli  
+
++ Uno stato può essere descritto in termi di __caratteristiche__ (_feature_) con un valore per ogni stato 
+
+***
+
+__Esempio__ -- sistema per la domotica
+
++ caratteristiche: 
+	* posizione degli interruttori,  
+	* stato di ogni interruttore (`in funzione`/`in corto`, `fuori uso`)
+	* stato dei punti luce
+		* es. `pos_s2` con valore `up` se l'interruttore `s2` è acceso e `down` se spento 
++ stato della casa descritto in termini dei valori di ciascuna delle caratteristiche
+
+***
+
++ Una __proposizione__ è una caratteristica  _booleana_ (valori _vero_/_falso_)
+	+ __NB__ 30 proposizioni codificano $2^{30} \approx 10^9$ stati
+		* più facile specificare e ragionare con 30 proposizioni che con oltre un miliardo di stati 
+	+ rappresentazione _compatta_ degli stati:
+		* indica che sono state comprese _regolarità_ importanti sul dominio 
+
+***
+
+__Esempio__ -- sistema per il riconoscimento delle lettere:
++ immagini b/n, 30 × 30
++ _azione_: determinare le lettere tracciate
++ __NB__ $2^{900}$ stati dell'immagine quindi $26^{2^{900}}$ funzioni dalle immagini alle lettere
+	+ proibitivo rappresentare tutte queste funzioni in termini di spazio degli stati
+	+ meglio definire alcune caratteristiche dell'immagine (es. segmenti) e definire le funzioni in termini di tali feature
+
+***
+
+Nella descrizione di mondi complessi le caratteristiche dipendono dalle _relazioni_ e dagli _individui_
+
++ una relazione su un singolo individuo è una __proprietà__  
++ si può definire una _caratteristica_ per ogni  possibile relazione tra gli individui
+
+***
+
+__Esempio__ --- domotica (cont.):
++ _individui_: luci e interruttori 
++ _relazioni_: `posizione` e  `connesso_a`
+	+ invece della caratteristica `posizione_s1 = up`, si può usare la relazione (proprietà) `posizione(s1, up)` 
+	+ consente di ragionare su tutti gli interruttori o sapere quelli che possono essere usati, ecc.
+	
+***
+
+__Esempio__ -- iscrizione studenti ai corsi:
++ `voto`: relazione/feature che assegna il voto a ognuno degli studenti per ogni corso seguito 
++ `superato`: relazione sulle coppie  studente-corso, che dipende da `voto`
++ più facile ragionare in termini di singoli studenti, corsi e voti con tali relazioni
+	+ una volta definita la dipendenza tra `superato` e `voto`, la si applicare a ogni studente/corso 
+	+ definibile PRIMA di conoscere gli studenti
+
+***
+
+Può essere ancora più conveniente trattare _descrizioni relazionali_ in termini di individui e relazioni invece di caratteristiche e proposizioni:
++ ad es., con una sola relazione binaria e $100$ individui si possono rappresentare $100^2 = 10000$ proposizioni e $2^{10000}$ stati
++ ragionando su relazioni e individui, si possono considerare intere _classi di individui_ senza enumerarne caratteristiche/proposizioni, o addirittura i numerosissimi stati 
++ un sistema potrebbe dover ragionare su insiemi di individui _infiniti_
+	+ ad es. l'insieme dei numeri, o l'insieme di tutte le stringhe 
+	+ impossibile in termini di stati o feature
+
+
+Riassumendo, nella dimensione dello __schema di rappresentazione__, si può ragionare in termini di: 
+- _stati_
+- _feature_ proposizionali o
+- _descrizioni relazionali_
+	+ su individui e relazioni
+
+
+
+## Orizzonte 
+
+L'__orizzonte__ misura quanto lontano (nel tempo) sia prevista la pianificazione del lavoro, ossia quanto in avanti ci si spinga a considerare le conseguenze delle azioni:
++ ad es. richiamo animali e ricompensa immediata 
+	+ un cane di solito non ha finalità che vanno molto in là nel futuro al contrario delle persone
++ a volte non serve considerare il tempo nel ragionamento ma si va avanti per _stage_ successivi
+
+In tale dimensione, si possono avere sistemi/agenti:
+- senza pianificazione: che non considerano il futuro quando prendono decisioni (sulle azioni)
+	+ il fattore-tempo non viene coinvolto
+- a orizzonte finito: interessano solo un numero prefissato di passi 
+	- ad es., dottore che deve curare il paziente ma c'è tempo per dei test, quindi due fasi: 
+		- test e cura 
+	- nel caso in cui conti una sola fase l'agente/algo. viene detto _greedy_ o _miope_
+- orizzonte indefinito: si considera un numero di passi finito, ma non predeterminato
+	+ ad es., agente che deve recarsi in un luogo lontano ma non sa quanti passi ci vorranno (e.g. n.ro di treni da prendere)
+- orizzonte infinito: sempre attivo (_processo_)
+	+ ad es., modulo di stabilizzazione di un robot: se si fermasse una volta raggiunta la stabilità dopo il robot potrebbe cadere di continuo
+
+
+## Incertezza
+
+A volte si deve progettare tenendo conto dell'_incertezza_ insita nel dominio considerato
+
+Due dimensioni:
++ sulla percezione / osservazione 
++ sugli effetti delle decisioni / azioni
+
+### Osservazione Incerta
+
+A volte l'_osservazione diretta_ dello stato del mondo è possibile
+
++ ad es. nei giochi da tavolo, carte 
+
+Più spesso accade che la percezione dello stato sia _difettosa_  o parziale / indiretta:
+
++ al più si può avere una _distribuzione_ di probabilità sull'insieme degli stati possibili su quanto si osserva
++ ad es. dati i sintomi, un medico potrebbe non sapere esattamente cos'abbia un paziente ma potrebbe diagnosticare malattie con diversi livelli di certezza 
+
+L'__incertezza sulla percezione__ riguarda la possibilità di determinare lo stato del mondo attraverso le  osservazioni:
+
++ _pienamente osservabile_: si può conoscere lo stato dalle osservazioni
+	* assunzione spesso fatta per ragioni di trattabilità dei problemi
++ _parzialmente osservabile_: non si osserva direttamente lo stato
+	+ più stati possibili possono portare alle stesse osservazioni 
+	+ oppure le osservazioni sono _rumorose_ (noisy)
+
+
+
+
+### Effetto  Incerto
+
+A volte è possibile che si conosca sempre l'effetto delle azioni/decisioni
+
++ ossia, dato uno stato e un'azione, si può predire precisamente lo stato risultante dall'applicazione della decisione/azione 
+	+ ad es., lavorando con un file system si conoscono gli effetti di una cancellazione di un file noto il suo stato
+
+A volte è difficile fare tali previsioni 
+
++ al più si può avere una distribuzione di probabilità sugli effetti possibili
+	+ ad es., nel richiamare il proprio cane, noto il suo stato e l'esperienza pregressa si ha un'idea su quello che farà
+		* a volte funziona anche con cani altrui
+
+La dimensione dell'__incertezza sugli effetti__ prevede che la loro _dinamica_ possa essere
+
++ _deterministica_ -- stato risultante determinato esattamente dall'azione e dallo stato precedente
++ _aleatoria_ -- probabilità sui possibili stati risultanti
+	+ ha senso solo se il mondo è completamente osservabile
+		+ altrimenti sistema stocastico modellato come deterministico ma con effetti che dipendono da feature non osservate
+
+
+## Preferenza
+
+Gli agenti sono spesso utilitaristici: 
++ scelta di un azione dettata da risultati attesi più desiderabili
++ finalità _semplici_ o preferenze _complesse_
+	+ stato da raggiungere o proposizione da avverare
+	+ ad es. il medico può tenere in conto l'aspettativa e la qualità di vita, costi (per sé, il paziente, la società), la possibilità di dover giustificare le decisioni in caso di giudizio legale, ... 
+
+La dimensione delle __preferenze__ si divide in
+
++ _finalità_, da raggiungere (_achievement goal_) in uno stato finale o di conservazione (_maintenance goal_) in ogni stato visitato
+	* ad es., un robot può voler prendere alcuni oggetti, ma senza mettere in disordine la stanza o far male agli altri
++ _preferenze complesse_: compromessi sul vantaggio derivate dei vari risultati, possibilmente anche in momenti diversi 
+	* preferenza _ordinale_: conta solo l'ordine 
+	* preferenza _cardinale_: conta anche la grandezza del valore  
+	* ad es., si preferisce il cappuccino al caffè e il caffè al tè (ordinale)<br> 
+	  compromesso tra il tempo d'attesa e il tipo di bevanda (cardinale)
+
+
+## Numero di Agenti
+
+Difficoltà aggiuntive degli ambienti in cui vi siano altri agenti
+
++ occorre ragionare sugli altri agenti secondo _strategie_ 
+	+ gli altri potrebbero cercare di confondere e manipolare o potrebbero cooperare
+	+ spesso conviene agire in modo casuale perché gli altri adottano strategie deterministiche 
++ anche quando si cooperi e vi sia un fine comune, il problema della _coordinazione_ e della _comunicazione_ rende il ragionamento multi-agente più arduo
+	+ ignorare le strategie degli altri potrebbe non risultare il modo migliore di ragionare 
+
+Dal punto di vista del singolo agente,<br> la dimensione del __numero di agenti__ prevede:
++ il ragionamento da _agente singolo_: si assume che gli altri siano parte dell'ambiente
+	+ ragionevole se non ci sono altri agenti o se gli altri non cambieranno il comportamento in base alle sue azioni 
++ ragionamento _multi-agente_: si prende in considerazione il ragionamento altrui 
+	+ in caso di agenti intelligenti i cui fini/ le cui preferenze dipendano, in parte, da quello che si fa se l'agente può comunicare con gli altri 
+	+ più difficile se gli agenti possono agire simultaneamente o se l'ambiente sia solo parzialmente osservabile
+	
+
+
+## Apprendimento
+
+Il progettista può avere un buon modello dell'agente/sistema e del suo ambiente 
+ma spesso non succede: 
++ si devono usare _dati_ da _esperienze passate_ e altre sorgenti di conoscenza per migliorare il modello e prendere migliori decisioni (sul da farsi)
+
+La dimensione __apprendimento__ determina se
+
++ la _conoscenza_ sia _data_ 
++ la _conoscenza_ vada _appresa_ (dai dati o da passata esperienza)
+
+Apprendere = trovare il modello migliore che si adatti ai dati
+
++ caso semplice: regolare un insieme fisso di _parametri_ 
++ caso più difficile: scegliere preliminarmente la migliore _rappresentazione_ 
+	* feature, relazioni
+
+Problematiche aggiuntive:
++ utilizzo di _conoscenza di fondo_ (BK)
++ _selezione_ dei dati da raccogliere
++ _rappresentazione_ dei dati e dei modelli 
++ selezione dei _learning bias_ appropriati
++ utilizzo della conoscenza appresa per modificare le azioni dell'agente 
+
+
+## Limiti sulle Risorse Computazionali 
+<!-- Sometimes an agent can decide on its best action quickly enough for it to act. -->
+Spesso ci sono limiti sulle risorse computazionali che impediscono di prendere le migliori decisioni sulle azioni da svolgere
+
++ non è possibile trovare la migliore decisione / azione in modo sufficientemente rapido date le limitazioni della memoria 
+	* ad es., potrebbe essere inutile attendere 10' per derivare qual era la decisione migliore 10' prima 
+* spesso sono necessari compromessi sulla qualità della soluzione da cercare 
+	- meglio una soluzione ragionevole ma rapida che una migliore quando è troppo tardi perché il mondo esterno cambia nel frattempo
+
+La dimensione dei __limiti sulle risorse computazionali__  determina se un sistema abbia:
++ una _razionalità perfetta_: ragiona per prendere la migliore decisione senza tener conto delle risorse limitate 
++ una _razionalità limitata_: ragiona per prendere la migliore decisione date le risorse limitate a disposizione
+
+I _limiti_ riguardano:
+- il _tempo_ 
+- la _memoria_ 
+- la _precisione_ (numerica) approssimata
+
+Un algoritmo _anytime_ produce soluzioni che migliorano con il tempo:
+- in qualunque momento produce la miglior soluzione corrente
+- con ancora più tempo questa potrebbe migliorare 
+	- si assicura che la qualità non decresca consentendo di immagazzinare la soluzione migliore trovata restituirla su richiesta
+- l'attesa può avere un costo: 
+	- a volte meglio decidere/agire prima di aspettare una soluzione probabilmente migliore
+
+
+![Qualità di una soluzione in funzione del tempo per un algoritmo anytime -- fonte [#2]](figs/pm1-5.png)
+
+
+In caso di razionalità limitata, si deve decidere se aspettare o pensare un po' di più
+
++ difficile giudicare la politica migliore
++ anche il tempo speso in tale decisione è da sottrarre a quello di ricerca della soluzione 
++ motiva il cosiddetto _ragionamento approssimato_
+
+
+
+## Interazione delle Dimensioni
+
+|Dimensione                    | Valori
+|-                             |-
+|Modularità                    | piatta, modulare, gerarchica
+|Schema di Rappresentazione    | stati, feature, relazioni
+|Orizzonte                     | senza pianificazione, a stage finite, indefinite, infinite
+|Incertezza sull'Osservazione  | pienamente osservabile, parzialmente osservabile
+|Incertezza sull'Effetto       | deterministica, stocastica
+|Preferenze                    | finalità, preferenze complesse
+|Apprendimento                 | conoscenza data, conoscenza appresa
+|Numero di Agenti              | singolo-agente, agenti multipli
+|Limiti Risorse Computazionali | razionalità perfetta, razionalità limitata
+
+Non si possono studiare in modo indipendente perché soggette a _interazioni complesse_
+
++ Rappresentazione e modularità
+	* moduli semplici in una gerarchia  tanto da poter ragionare in termini di un insieme finito di stati, mentre altri livelli di astrazione richiedono un ragionamento su relazioni
+		- ad es., robot consegne: 
+			+ modulo di bilanciamento con pochi stati
+			+ modulo che deve tener conto delle priorità di consegna di più colli a diverse persone deve ragionare su più individui (e.g., persone, pacchi, stanze,...) e loro relazioni
+			+ a livello più alto, un modulo può ragionare sull'intera attività giornaliera differenziando con pochi stati le diverse fasi del giorno (e.g., stati `impegnato`, `disponibile` e `ricarica`)
++ L'orizzonte interagisce con la modularità
+	* ad es. ad alto livello, un cane può ricevere una ricompensa quando risponde al richiamo
+		- quando decide dove mettere le zampe, potrebbe volerci del tempo prima di ricevere il boccone per cui l'orizzonte potrebbe essere indefinito
++ L'incertezza sull'osservazione probabilmente ha l'impatto maggiore sulla complessità del ragionamento:
+	+ molto più facile ragionare quando si conosce lo stato del mondo 
+	+ l'incertezza sugli individui e le relazioni è più complicata da trattare 
++ L'incertezza sugli effetti interagisce con la modularità:
+	+ ad un dato livello della gerarchia una decisione può essere deterministica mentre ad un altro potrebbe essere stocastica
+		<!-- 	+ ad es. consider the result of flying to Paris with a companion you are trying to impress. At one level you may know where 	you are (in Paris); at a lower level, you may be quite lost and not know where 	you are on a map of the airport. At an even lower level responsible for maintaining balance, you may know where you are: you are standing on the ground. At the highest level, you may be very unsure whether you have impressed your 	companion. --> 
++ I modelli di preferenza interagiscono con l'incertezza 
+	* serve un compromesso tra soddisfare un fine importante con una certa probabilità o un fine meno desiderabile con ancor maggiore probabilità  
++ Agenti multipli si accompagnano bene alla modularità 
+	* un agente singolo può essere progettato attraverso agenti multipli che interagiscono condividendo un fine comune di rendere intelligente il comportamento dell'agente di livello superiore 
+		- secondo alcuni[^Minsky86], l'intelligenza è una caratteristica emergente da una “società” di agenti non intelligenti 
++ Apprendimento e rappresentazione
+	* spesso si riduce all'apprendimento da feature: 
+		- determinare i valori che determinano le migliori predizioni per i valori di un'altra feature (problemi di classificazione, regressione)
+	+ ma si può lavorare anche su individui e relazioni
+	+ numerosi lavori sull'apprendimento di gerarchie, apprendimento in domini parzialmente osservabili e attraverso agenti multipli
+		* tutte queste modalità interagiscono con diverse altre dimensioni
++ Modularità e razionalità limitata promettono di rendere il ragionamento più efficiente 
+	+ il formalismo può diventare più complicato 
+	+ ma per a costruire sistemi complessi sono utili 
+		* la suddivisione in componenti più piccole 
+		* fare approssimazioni  per poter decidere in tempi accettabili e in regime di memoria limitata 
+
+[^Minsky86]: Minsky, M. (1986). _The Society of Mind_. Simon and Schuster
+
+
+# Applicazioni
+
+__Agenti Intelligenti__: percezione--ragionamento--azione<br>
+immersi in un _ambiente_
+
+<div class="inverse"> 
+**************************************************************
+* conoscenza pregressa----.       .----------------.
+*                          |     |                  |
+* finalità/preferenze--.    '--->|                  |
+*                       |        |                  |
+*                        '------>|      AGENTE      |
+* abilità----------------------->|         /        +--.
+*                        .------>|      SISTEMA     |   |
+*                       |        |                  |   |
+* osservazioni---------'    .--->|                  |   |
+*                          |     |                  |   |
+* esperienza passata------'       '----------------'    |
+*           ^               .-.                         |
+*           |              |   +--.                     |
+*           |            .-+       +----.               |
+*           |         .-+                +-----.  azioni|
+*            '-------+     A M B I E N T E      |<-----'
+*                     '+    +    +      +     +'
+*                       '--' '--' '----' '---'
+**************************************************************
+</div>
+
++ robot: unità di calcolo+sensori+attuatori
++ sistema esperto: puramente computazionale (SW), info fornita da umani 
+	* diagnostica
+	* infobot
+
+
+
+## Infobot
+
+Un __infobot__ è una specie di _robot_, che interagisce con un ambiente informativo anziché fisico
+
+Compiti:
++ estrarre info da una rete di sorgenti informative
+	* Internet | enciclopedie multimediali 
++ determinare quale info serva per una query 
+	+ in un linguaggio formale, da utenti esperti 
+	+ in linguaggio naturale da un utente generico 
++ individuare le sorgenti informative, trovare le informazioni necessarie e presentarle in modo utile per l'utente
+
+__Input__ (cfr. figura):
++ _Conoscenza pregressa_ significato delle parole, tipi di sorgenti informative e come accedervi
++ _Esperienza passata_ informazione da ottenere, velocità dei vari server e info sulle preferenze-utente
++ _Finalità_ informazione da ricercare e compromessi sul dispendio di risorse e tra volume e qualità 
++ _Osservazioni_ info presente sui siti al momento, link disponibili e carico sulle varie connessioni
++ _Abilità_ azioni primitive di cui è capace
+
+__Output__ (info utile alla comprensione da parte dell'utente, anche in caso di info mancante)
+
+L'infobot deve essere capace di:
++ Derivare info implicita nella/e base/i di conoscenza, (e interagire in NL) 
++ Cercare info rilevante in una varietà di basi di conoscenza  
++ Trovare buone rappresentazioni della conoscenza che assicurino una computazione efficiente delle risposte 
++ Spiegare come sia stata derivata una risposta o perché alcune info non erano disponibili
++ Trarre conclusioni in caso di mancanza di conoscenza, determinare eventuali conflitti ed essere in grado di inferire conoscenza disgiuntiva 
++ Usare ragionamento per default sulle possibili diverse fonti di informazione 
++ Fare compromessi tra sorgenti a basso costo ma poco affidabili e sorgenti più costose ma più complete
++ Imparare quale conoscenza sia disponibile e dove e l'info che l'utente ....
+
+Due diversi infobot: 
+unibot 
+: interagisce con un DB: info su corsi, tempistica, propedeuticità, regole, valutazioni
+webbot 
+: interagisce con il Web, ricerca info utili all'utente
+ 
+Aspetto importante: _proattività_
+
+
+## Caratteristiche Comuni
+
+Ad un certo livello di astrazione, 4 compiti:
+
+Modellazione dell'ambiente 
+: dev'essere in grado di modellare come le info debbano essere ottenute, quali risposte siano ammesse alle domande e quali info siano necessarie in base alla richiesta 
+
+Ragionamento sulle evidenze (o percezioni) 
+: determinare com'è fatto il dominio, dove sono disponibili le info, data una info parziale sul contenuto delle varie sorgenti 
+
+Azione 
+: dato un modello del mondo e uno scopo, determinare cosa vada fatto per raggiungerlo:  consultare una o più basi di conoscenza per estrarre informazioni
+
+Apprendimento dall'esperienza passata 
+: imparare le caratteristiche dell'ambiente, ad es. i colli di bottiglia nella comunicazione in rete, e come risolvere i problemi più velocemente
+
+
+C'è interazione nello svolgimento di tali compiti: vanno studiati in modo organico
+	
+
+
+(#) Riferimenti Bibliografici
+
+
+[#1]: D. Poole, A. Mackworth, R. Goebel: _Computational Intelligence: A Logical Approach_. Oxford University Press
+
+[#2]: D. Poole, A. Mackworth: _Artificial Intelligence: Foundations of Computational Agents_. Cambridge University Press
+
+[#3]: S. J. Russell, P. Norvig:  _Artificial Intelligence_ Pearson. 3rd Ed. 
+	- cfr. anche ed. Italiana
+
+[#4]: J. Sowa: _Knowledge Representation: Logical, Philosophical, and Computational Foundations_ Brooks Cole/Cengage
+
+
+(###) Link
+
+[#KE]: https://en.wikipedia.org/wiki/Knowledge_engineering
+
+[#GNU-Prolog]: http://www.gprolog.org/
+
+
+
+<!-- <link rel="stylesheet" href="iic.css?"><script>markdeepOptions={tocStyle:'none'}</script>
+
+<style class="fallback">body{visibility:hidden}</style><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?"></script> 
+-->
+
+<script>
+	var MathJax = {"HTML-CSS": {scale: 85}};
+</script>
+
+
+
+<script>markdeepOptions={tocStyle:'long'}</script>
+<!-- Markdeep: --><style class="fallback">body{visibility:hidden}</style>
+<!-- <script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?"></script> -->
+<script src="markdeep.min.js"></script>
+
+
