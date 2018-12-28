@@ -1,4 +1,3 @@
-# Ing. della Conoscenza
+# Ingegneria della Conoscenza
 ## Materiale didattico
 
-+ [Introduzione](IC-intro.pdf)
