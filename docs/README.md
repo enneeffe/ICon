@@ -1,4 +1,4 @@
-#Materiale Didattico
+# Materiale Didattico
 
 1. [Introduzione](IC-intro.pdf)
 2. Ricerca
@@ -11,4 +11,4 @@
 9. Ontologie e Basi di Conoscenza Distribuite
 10. Ragionamento Probabilistico Relazionale
 
-su [ADA](https://elearning.di.uniba.it/course/view.php?id=452)
+Sito dell'insegnamento su [ADA](https://elearning.di.uniba.it/course/view.php?id=452)
