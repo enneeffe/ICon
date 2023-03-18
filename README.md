@@ -1,7 +1,7 @@
 # Materiale Didattico
 
-1. [Introduzione](".\Ingegneria dei Sistemi Basati su Conoscenza_Introduzione.pdf")
-2. [Ricerca]("Spazi di Stati e Ricerca di Soluzioni.pdf")
+1. [Introduzione](Ingegneria%20dei%20Sistemi%20Basati%20su%20Conoscenza_Introduzione.pdf")
+2. [Ricerca]("Spazi%20di%20Stati%20e%20Ricerca%20di%20Soluzioni.pdf")
 3. [Ragionamento con Vincoli](Ragionamento%20con%20Vincoli.pdf) 
 4. [Rappresentazione Proposizionale e Inferenza](Rappresentazione\ e\ Ragionamento\ Proposizionale.pdf)
 5. [Individui e Relazioni](Rappresentazione e Ragionamento Relazionale.pdf)
